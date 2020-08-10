@@ -5,8 +5,10 @@
 <h2> Created events </h2>
 
 <% @user.created_events.each do |event| %>
-  <h3> <%= event.tittle %> <a style="font-size: 15px;"> <%= event.date.to_date %> </a> </h3>
+  <a href="<%= event_path(event) %>">  
+  <h3> <%= event.title %> <a style="font-size: 15px;"> <%= event.date.to_date %> </a> </h3>
   <p> <%= event.description %> </p>
+</a>
 <% end %>
 
 
@@ -17,12 +19,16 @@
 
 <h2> Upcoming events </h2>
 <% @user.upcoming_events.each do |upcoming_event| %>
-  <h3><%= upcoming_event.tittle %>
+  <a href="<%= event_path(upcoming_event) %>">  
+  <h3><%= upcoming_event.title %>
   <a><%= upcoming_event.date.to_date %></a></h3>
+</a>
 <% end %>
 
 <h2> Previous events </h2>
 <% @user.previous_events.each do |previous_event| %>
-  <h3><%= previous_event.tittle %>
+  <a href="<%= event_path(previous_event) %>">    
+  <h3><%= previous_event.title %>
   <a><%= previous_event.date.to_date %></a></h3>
+</a>
 <% end %> 

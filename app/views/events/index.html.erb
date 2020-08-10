@@ -1,16 +1,22 @@
-<h1>Browse all events</h1>
+<div class="event-header">
+  <h1>Browse all events</h1>
+  <%= link_to 'Create Event', new_event_path, class: 'btn btn-primary' %>
+</div>
 
 <h2>Previous Events</h2>
 <% Event.past.all.each do |event_past| %>
+<a href="<%= event_path(event_past) %>">  
   <h3> <%= event_past.tittle %> <a style="font-size: 15px;"> <%= event_past.date.to_date %> </a> </h3>
   <p> Creator : <a style="font-size: 15px;"> <%= event_past.creator.name %> </a> </p>
   <p> <%= event_past.description %> </p>
-  <p> <%= event.description %> </p>
+</a>
 <% end %>
 
 <h2>Upcoming Events</h2>
 <% Event.upcoming.all.each do |event_upcoming| %>
+  <a href="<%= event_path(event_upcoming) %>">  
   <h3> <%= event_upcoming.tittle %> <a style="font-size: 15px;"> <%= event_upcoming.date.to_date %> </a> </h3>
   <p> Creator : <a style="font-size: 15px;"> <%= event_upcoming.creator.name %> </a> </p>
   <p> <%= event_upcoming.description %> </p>
+</a>
 <% end %> 

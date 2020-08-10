@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     
     def create
         @event = current_user.created_events.build
-        @event.title = params[:event][:title]
+        @event.tittle = params[:event][:tittle]
         @event.description = params[:event][:description]
         @event.date = params[:event][:date]
         @event.location = params[:event][:location]
