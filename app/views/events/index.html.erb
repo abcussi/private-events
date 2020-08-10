@@ -1,0 +1,8 @@
+<h1>Browse all events</h1>
+
+
+<% @created_events.each do |event| %>
+  <h3> <%= event.tittle %> <a style="font-size: 15px;"> <%= event.date.to_date %> </a> </h3>
+  <p> Creator : <a style="font-size: 15px;"> <%= event.creator.name %> </a> </p>
+  <p> <%= event.description %> </p>
+<% end %>

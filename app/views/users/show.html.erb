@@ -1,0 +1,10 @@
+<h3><%= @user.name %></h3>
+<h4><%= @user.email %></h4>
+
+
+<h2> Created events </h2>
+
+<% @user.created_events.each do |event| %>
+  <h3> <%= event.tittle %> <a style="font-size: 15px;"> <%= event.date.to_date %> </a> </h3>
+  <p> <%= event.description %> </p>
+<% end %>
