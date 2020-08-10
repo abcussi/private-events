@@ -8,3 +8,21 @@
   <h3> <%= event.tittle %> <a style="font-size: 15px;"> <%= event.date.to_date %> </a> </h3>
   <p> <%= event.description %> </p>
 <% end %>
+
+
+<h2> Attended events </h2>
+<% @user.attended_events.each do |attend_event| %>
+  <%= attend_event.tittle %>
+<% end %>
+
+<h2> Upcoming events </h2>
+<% @user.upcoming_events.each do |upcoming_event| %>
+  <h3><%= upcoming_event.tittle %>
+  <a><%= upcoming_event.date.to_date %></a></h3>
+<% end %>
+
+<h2> Previous events </h2>
+<% @user.previous_events.each do |previous_event| %>
+  <h3><%= previous_event.tittle %>
+  <a><%= previous_event.date.to_date %></a></h3>
+<% end %> 

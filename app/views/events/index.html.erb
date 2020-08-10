@@ -1,8 +1,16 @@
 <h1>Browse all events</h1>
 
-
-<% @created_events.each do |event| %>
-  <h3> <%= event.tittle %> <a style="font-size: 15px;"> <%= event.date.to_date %> </a> </h3>
-  <p> Creator : <a style="font-size: 15px;"> <%= event.creator.name %> </a> </p>
+<h2>Previous Events</h2>
+<% Event.past.all.each do |event_past| %>
+  <h3> <%= event_past.tittle %> <a style="font-size: 15px;"> <%= event_past.date.to_date %> </a> </h3>
+  <p> Creator : <a style="font-size: 15px;"> <%= event_past.creator.name %> </a> </p>
+  <p> <%= event_past.description %> </p>
   <p> <%= event.description %> </p>
 <% end %>
+
+<h2>Upcoming Events</h2>
+<% Event.upcoming.all.each do |event_upcoming| %>
+  <h3> <%= event_upcoming.tittle %> <a style="font-size: 15px;"> <%= event_upcoming.date.to_date %> </a> </h3>
+  <p> Creator : <a style="font-size: 15px;"> <%= event_upcoming.creator.name %> </a> </p>
+  <p> <%= event_upcoming.description %> </p>
+<% end %> 

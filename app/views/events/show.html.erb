@@ -4,3 +4,7 @@
 <h3> Location: <%= @event.location %> </h3>
 <h3> Date: <%= @event.date %> </h3>
 <p> <%= @event.description %> </p>
+<h2> Attendees: </h2>
+<% @event.attendees.each do |f| %>
+<h3><%= f.name %></h3>
+<% end %> 
