@@ -1,0 +1,13 @@
+<header class="navbar navbar-inverse">
+    <div class="container">
+        <nav>
+            <ul class="nav navbar-nav navbar-right">
+                <% if logged_in? %>
+                    <li><%= current_user.name %></li>
+                <%else%>
+                    <li><%= link_to "Login", login_path %></li>
+                <% end %>
+            </ul>
+        </nav>
+    </div>
+</header>
