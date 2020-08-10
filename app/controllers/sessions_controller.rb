@@ -4,9 +4,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(id: parms[:session][:user_id])
+    @user = User.find_by(id: params[:session][:user_id])
     if @user
-      login(@user.id)
+      login(@user.email)
       redirect_to user_path(@user.id)
     else
       flash.now[:message] = 'Incorrect'

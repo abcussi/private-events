@@ -1,24 +1,35 @@
-# README
+# Member's Only
+In this applicaiton users could attend many events. I've created a sessions system to back up the login. This is a ruby on rails based application where we developed our own associations relationships.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+![screenshot](./app.png)
 
-* Ruby version
+# Requirements
 
-* System dependencies
+- Ruby > 2.6
+- Ruby on Rails > 5.2
+- Rubocop
+- Bcrypt
 
-* Configuration
+## Built With
 
-* Database creation
+- Ruby
+- Ruby on Rails
 
-* Database initialization
+## Author
 
-* How to run the test suite
+👤 **Angel Benjamin Cussi Callisaya**
 
-* Services (job queues, cache servers, search engines, etc.)
+- Github: [@abcussi](https://github.com/abcussi)
+- Twitter: [@thecussi](https://twitter.com/thecussi)
+- Linkedin: [angel-cussi](https://www.linkedin.com/in/angel-cussi-1b2310174/)
 
-* Deployment instructions
+## 🤝 Contributing
 
-* ...
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
