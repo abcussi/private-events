@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :attended_events, through: :attendance_events
 
   has_many :created_events, foreign_key: 'creator_id', class_name: 'Event'
+  
   has_secure_password
 
   def upcoming_events
@@ -13,6 +14,7 @@ class User < ApplicationRecord
   def previous_events
     attended_events.where('date < date(\'now\')')
   end
+  
 
   validates :email, presence: true, uniqueness: true
   validates :name, presence: true

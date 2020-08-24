@@ -5,6 +5,6 @@
 <h3> Date: <%= @event.date.to_date %> </h3>
 <p> <%= @event.description %> </p>
 <h2> Attendees: </h2>
-<% @event.attendees.each do |f| %>
-<h3><%= f.name %></h3>
+<% @event.attendees.each do |users| %>
+<h3><%= users.name %></h3>
 <% end %> 

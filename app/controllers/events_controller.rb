@@ -9,7 +9,6 @@ class EventsController < ApplicationController
     @event.description = params[:event][:description]
     @event.date = params[:event][:date]
     @event.location = params[:event][:location]
-
     if @event.save
       flash[:message] = 'New event created'
       redirect_to event_path(@event)
@@ -21,10 +20,11 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find_by(id: params[:id])
-    p @event.attendees
+    @event.attendees = User.all
   end
 
   def index
     @created_events = Event.all
   end
+  
 end

@@ -14,21 +14,37 @@
 
 <h2> Attended events </h2>
 <% @user.attended_events.each do |attend_event| %>
-  <%= attend_event.tittle %>
+  <span style = "font-size:20px; color:grey;">
+  <span><%= attend_event.id%></span>
+<%= attend_event.tittle %> <span style="opacity:0.50;">  //past</span><br></span>
+
 <% end %>
 
+
+
 <h2> Upcoming events </h2>
-<% @user.upcoming_events.each do |upcoming_event| %>
-  <a href="<%= event_path(upcoming_event) %>">  
+<% Event.upcoming.each do |upcoming_event| %>
+  <span style="color:blue;">
   <h3><%= upcoming_event.tittle %>
-  <a><%= upcoming_event.date.to_date %></a></h3>
+  <%= upcoming_event.date.to_date %>
+
+  <span><%= upcoming_event.id%></span>
+
+  <%if attend?(upcoming_event,@user.attended_events.all)%>
+  <button style="border:2; border-radius: 10px;">
+  <a href="<%= event_path(upcoming_event) %>"> attend this event </a>
+  <%end%>
+  </button>
+  </h3>
+  </span>
+  
 </a>
 <% end %>
 
 <h2> Previous events </h2>
-<% @user.previous_events.each do |previous_event| %>
+<% Event.past.each do |previous_event| %>
   <a href="<%= event_path(previous_event) %>">    
   <h3><%= previous_event.tittle %>
-  <a><%= previous_event.date.to_date %></a></h3>
+  <%= previous_event.date.to_date %></a></h3>
 </a>
 <% end %> 

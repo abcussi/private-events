@@ -6,17 +6,17 @@
 <h2>Previous Events</h2>
 <% Event.past.all.each do |event_past| %>
 <a href="<%= event_path(event_past) %>">  
-  <h3> <%= event_past.tittle %> <a style="font-size: 15px;"> <%= event_past.date.to_date %> </a> </h3>
-  <p> Creator : <a style="font-size: 15px;"> <%= event_past.creator.name %> </a> </p>
-  <p> <%= event_past.description %> </p>
+  <h3> <%= event_past.tittle %>  <%= event_past.date.to_date %>  </h3>
 </a>
+  <p> Creator : <span style="font-size: 20px; color:red; "> <%= event_past.creator.name %> </span> </p>
+  <p> <%= event_past.description %> </p>
 <% end %>
 
 <h2>Upcoming Events</h2>
 <% Event.upcoming.all.each do |event_upcoming| %>
   <a href="<%= event_path(event_upcoming) %>">  
-  <h3> <%= event_upcoming.tittle %> <a style="font-size: 15px;"> <%= event_upcoming.date.to_date %> </a> </h3>
-  <p> Creator : <a style="font-size: 15px;"> <%= event_upcoming.creator.name %> </a> </p>
+  <h3> <%= event_upcoming.tittle %>  <%= event_upcoming.date.to_date %>  </h3>
+  </a> 
+  <p> Creator : <span style="font-size: 20px; color:red;"> <%= event_upcoming.creator.name %> </span> </p>
   <p> <%= event_upcoming.description %> </p>
-</a>
 <% end %> 
