@@ -26,5 +26,4 @@ class EventsController < ApplicationController
   def index
     @created_events = Event.all
   end
-  
 end
