@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_08_10_084331) do
     t.integer "attended_event_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    
   end
 
   create_table "events", force: :cascade do |t|
