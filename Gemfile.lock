@@ -242,6 +242,8 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
+    suggest-db-indices (0.1.0)
+      rails (>= 3.0.0)
     thor (1.0.1)
     thread_safe (0.3.6)
     thread_safe (0.3.6-java)
@@ -307,6 +309,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   sprockets (~> 4.0)
   sqlite3 (~> 1.4)
+  suggest-db-indices (~> 0.1.0)
   turbolinks (~> 5)
   tzinfo-data
   uglifier
