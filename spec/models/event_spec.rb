@@ -19,12 +19,12 @@ RSpec.describe Event, type: :model do
       expect(event).to have_attributes(tittle: 'first event')
     end
 
-    it "Should validates presence of tittle" do
+    it 'Should validates presence of tittle' do
       event.tittle = nil
       expect(event.valid?).to eql(false)
     end
 
-    it "Should validates presence of date" do
+    it 'Should validates presence of date' do
       event.date = nil
       expect(event.valid?).to eql(false)
     end
@@ -32,5 +32,5 @@ RSpec.describe Event, type: :model do
 
   context 'Associations' do
     it { should belong_to(:creator).class_name('User') }
-   end
+  end
 end
