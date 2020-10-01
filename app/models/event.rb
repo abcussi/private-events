@@ -7,4 +7,6 @@ class Event < ApplicationRecord
   scope :upcoming, -> { where("date > date('now')") }
 
   validates :creator_id, presence: true
+  validates :tittle, presence: true
+  validates :date, presence: true
 end

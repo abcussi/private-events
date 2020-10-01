@@ -27,6 +27,8 @@ gem 'rubocop'
 gem 'jquery-rails'
 gem 'uglifier'
 gem 'sprockets', '~> 4.0'
+
+gem 'shoulda', '~> 4.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'suggest-db-indices', '~> 0.1.0'
@@ -40,6 +42,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
 
   gem "factory_bot"
+  
   gem 'database_cleaner'
 end
 
