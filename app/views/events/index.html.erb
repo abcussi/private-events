@@ -1,7 +1,10 @@
 <div class="event-header">
   <h1 style="text-align:center;">Browse all events</h1>
+ <% if logged_in? %>
   <%= link_to 'Create Event', new_event_path, class: 'btn btn-primary btn-lg pull-right' %>
+<% end %>
 </div>
+
 <div class="container" style="text-align:center;">
 
 <h2>Upcoming Events</h2>
