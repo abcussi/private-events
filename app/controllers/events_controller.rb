@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     if @event.save
       flash[:message] = 'New event created'
       redirect_to event_path(@event)
-      
+
     else
       flash.now[:message] = 'Something went wrong'
       render 'new'
