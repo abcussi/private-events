@@ -6,7 +6,7 @@ In this applicaiton users could attend many events. I've created a sessions syst
 
 # Requirements
 
-- Ruby > 2.6
+- Ruby > 2.7
 - Ruby on Rails > 5.2
 - Rubocop
 - Bcrypt
@@ -15,6 +15,26 @@ In this applicaiton users could attend many events. I've created a sessions syst
 
 - Ruby
 - Ruby on Rails
+
+### Prerequisites
+
+Ruby: 2.7.0
+Rails: 5.2
+
+### Setup
+
+Instal gems with:
+
+```
+bundle install
+```
+
+Setup database with:
+
+```
+   rails db:create
+   rails db:migrate
+```
 
 ## Author
 

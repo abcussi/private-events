@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path(@user)
       login(@user.id)
+      @user.attended_event_ids.clear
     else
       render 'new'
     end
