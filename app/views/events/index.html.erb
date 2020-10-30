@@ -1,0 +1,43 @@
+<div class="event-header">
+  <h1 style="text-align:center;">Browse all events</h1>
+ <% if logged_in? %>
+  <%= link_to 'Create Event', new_event_path, class: 'btn btn-primary btn-lg pull-right' %>
+<% end %>
+</div>
+
+<div class="container" style="text-align:center;">
+
+<h2>Upcoming Events</h2>
+
+<div class="grid size" style=" display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 10px;
+  grid-gap: 1em;">
+<% Event.upcoming.all.each do |event_upcoming| %>
+
+<div style="border:solid; border-radius:1rem;" class="grid-item">
+  <a href="<%= event_path(event_upcoming) %>">  
+  <h3> <%= event_upcoming.tittle %>  <%= event_upcoming.date.to_date %>  </h3>
+  </a> 
+  <p> Creator : <span style="font-size: 20px; color:red;"> <%= event_upcoming.creator.name %> </span> </p>
+  <p> <%= event_upcoming.description %> </p>
+  </div>
+<% end %> 
+</div>
+<h2>Previous Events</h2>
+
+<div class="grid size" style=" display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 10px;
+  grid-gap: 1em;">
+<% Event.past.all.each do |event_past| %>
+<div style="border:solid; border-radius:1rem;" class="grid-item">
+<a href="<%= event_path(event_past) %>">  
+  <h3 class=""> <%= event_past.tittle %>  <%= event_past.date.to_date %>  </h3>
+</a>
+  <p> Creator : <span style="font-size: 20px; color:red; "> <%= event_past.creator.name %> </span> </p>
+  <p> <%= event_past.description %> </p>
+</div>
+<% end %>
+</div >
+</div>

@@ -1,0 +1,20 @@
+<%= flash[:message] %>
+
+<h1> <%= @event.tittle %> </h1>
+<h3> Location: <%= @event.location %> </h3>
+<h3> Date: <%= @event.date.to_date %> </h3>
+<p> <%= @event.description %> </p>
+<h2> Attendees: </h2>
+
+<%= form_for @event do |f| %>
+<f.select multiple="multiple" size="User.all.length" id="user_names"
+name="user_names[]">
+<% User.all.each do |user| %>
+  <option value="<%= user.name %>">
+    <%= user.name %>
+  </option>
+<% end %>
+</select>
+
+  <%= f.submit 'Submit', class: 'btn btn-primary' %>
+<% end %>

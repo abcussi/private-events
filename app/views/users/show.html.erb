@@ -1,0 +1,84 @@
+<h3><%= @user.name %></h3>
+<h4><%= @user.email %></h4>
+
+
+<h2> Created events </h2>
+
+<div class="grid size" style=" display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 10px;
+  grid-gap: 1em;">
+<% @user.created_events.each do |event| %>
+<div style="border:solid; border-radius:1rem; text-align:center;" class="grid-item">
+<p>  
+  <h3> <%= event.tittle %> <p style="font-size: 15px; "> <br><span style="color:black;">Date :</span><%= event.date.to_date %> </p> </h3>
+  <p style="border-top:solid;"> <%= event.description %> </p>
+</p>
+</div>
+<% end %>
+</div>
+
+<h2> Attended events </h2>
+
+<div class="grid size" style=" display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 10px;
+  grid-gap: 1em;
+  text-align:center;">
+<% @user.attended_events.each do |attend_event| %>
+<div style="border:solid; border-radius:1rem;" class="grid-item">
+  <span style = "font-size:20px; color:grey;"><%= attend_event.date%><br></span>
+  <p style="color:black;border-top:solid;">
+<%= attend_event.tittle %></p>
+</div>
+<% end %>
+</div>
+
+
+<h2> Upcoming events </h2>
+
+<div class="grid size" style=" display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 10px;
+  grid-gap: 1em;
+  text-align:center;">
+<% Event.upcoming.each do |upcoming_event| %>
+<div style="border:solid; border-radius:1rem;" class="grid-item">
+  <span style="color:blue;">
+  <h3 ><%= upcoming_event.tittle %>
+  <%= upcoming_event.date.to_date %>
+  <%if attend?(upcoming_event,@user.attended_events.all)%>
+  <button style="border:2; border-radius: 10px;">
+  <a href="<%= event_path(upcoming_event) %>"> attend this event </a>
+  </button>
+  <%else%>
+  <button class="btn-info" >
+  <a href="<%= event_path(upcoming_event) %>" style="color:white;"> already attended </a>
+  </button>
+  <%end%>
+  
+  </button>
+  </h3>
+  </span>
+  
+</a>
+</div>
+<% end %>
+</div>
+
+<h2> Previous events </h2>
+
+<div class="grid size" style=" display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 10px;
+  grid-gap: 1em;
+  text-align:center;">
+<% Event.past.each do |previous_event| %>
+<div style="border:solid; border-radius:1rem;" class="grid-item">
+  <a href="<%= event_path(previous_event) %>">    
+  <h3><%= previous_event.tittle %>
+  <%= previous_event.date.to_date %></a></h3>
+</a>
+</div>
+<% end %> 
+</div>
